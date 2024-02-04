@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Рецепты</title>
 </head>
 <body>
-{% for ingredient, amount in recipe.items %}
-    <p>{{ ingredient }}: {{ amount }}</p>
-{% empty %}
+<ul style="color: dark-green; font-size: 20px">
+    {% for i, n in recipe.items %}
+    <li>{{ i }}: {{ n }}</li>
+    {% empty %}
     <p>Такого рецепта не знаю :(</p>
-{% endfor %}
+    {% endfor %}
+</ul>
 </body>
 </html>
