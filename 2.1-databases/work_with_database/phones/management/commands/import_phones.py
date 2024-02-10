@@ -12,6 +12,11 @@ class Command(BaseCommand):
         with open('phones.csv', 'r') as file:
             phones = list(csv.DictReader(file, delimiter=';'))
 
-        for phone in phones:
-            # TODO: Добавьте сохранение модели
-            pass
+        for row in phones:
+            phone = Phone()
+            phone.name = row['name']
+            phone.price = row['price']
+            phone.image = row['image']
+            phone.release_date = ['release_date']
+            phone.lte_exists = ['lte_exists']
+            phone.save()
