@@ -21,6 +21,6 @@ class Command(BaseCommand):
                 phone.price = row['price']
                 phone.release_date = row['release_date']
                 phone.lte_exists = row['lte_exists']
-                phone.slug = row['name']
+                phone.slug = slugify(row['name'])
 
                 phone.save()
